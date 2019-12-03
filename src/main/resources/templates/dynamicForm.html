@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello</title>
+</head>
+<body >
+<div style="text-align:center">
+    <h1 style="font-size:20px" class="greeting-id">This is a basic example of Spring possibilities</h1>
+    <p class="greeting-content">Please send your data to server if you really want it</p>
+    <form id="input-form" action="dynamic-form" method="post">
+        <input type="text" id="inputData" >
+        <input type="button" id="button" value="Send a message">
+        <script>
+          button.onclick = function() {
+            var req = new XMLHttpRequest();
+            var body = inputData.value;
+            req.open("POST", 'PushNewsServlet', true);
+            req.setRequestHeader('Content-Type', 'dynamic-form');
+            req.send(body);
+            inputData.value = "";
+          };
+        </script>
+    </form>
+</div>
+</body>
+</html>
